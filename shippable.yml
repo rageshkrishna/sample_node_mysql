@@ -6,7 +6,8 @@ node_js:
   
 
 services:
-  - mysql
+  - elasticsearch
+  
 env:
   global:
     - FO1=FUBU
