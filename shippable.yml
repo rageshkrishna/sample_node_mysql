@@ -33,8 +33,8 @@ build:
     - npm test
 
   post_ci:
-    - docker build --rm -t=shippabledocker/vidya_sample_node3 . 
-    - docker push shippabledocker/vidya_sample_node3
+ #   - docker build --rm -t=shippabledocker/vidya_sample_node3 . 
+    - docker push shippabledocker/sample_node_myql
   smoke_test:
     - sudo ls /
 
@@ -44,22 +44,9 @@ deploy:
     - ls -al
 
 integrations:
-  notification:
-    - integrationName: "slack-pvt"
-      type: slack
-      recipients:
-        - pvt-channel
-      branches:
-        only:
-          - master
-      on_start: always
-      on_success: always
-      on_failure: always
-      on_pull_request: always
-    
-
+  
   hub:
-    - integrationName: "shippable-docker"
+    - integrationName: "ship-docker"
       type: docker
       branches:
         only:
