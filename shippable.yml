@@ -29,7 +29,7 @@ build:
     - ps -eax
     - ls -al
     - echo $FO1 and $FO2 and $FOO
-    - mysql -e 'create database if not exists test;'
+  #  - mysql -e 'create database if not exists test;'
     - npm test
 
   post_ci:
